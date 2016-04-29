@@ -1,0 +1,11 @@
+1. For insurance, if the dealer's first card shown is a "1" (Ace), ask the player if they want insurance. Put lal this in an if statement at the begninning of the round. If they want insurance, ask for amount (typically half of their bet) and deduct this amount from their balance. If the dealer's second card's value is 10, the player gets double their insurance bet (regular bet is still taken by the dealer; player only earns or loses on insurance bet). However, if the dealer's second card doesn't add up to blackjack, they lose the insurance bet and the game continues normally afterwards
+2. Ask the player if they want to double down when asking them to bet. (use boolean and put this into bet statement) (HINT WOULD BE FOR THEM NOT TO DOUBLE DOWN IF THEY ARE OVER 11) If they do double down and their value is less than 11, double their bet (normally), and hit them ONCE. End of players turn, reveal the cards of players who double downed. Then just compare to dealer normally
+3. For split, make a method in player class called canSplit which returns a boolean. If player can split (2 faces in hand are the same), make two sepatate arraylists in the playerclass, with one of the 2 same cards in each. Then basically just use these 2 arraylists as different hands and play normally. When you split the 2 cards, hit both of the 2 new hands. Bet on both of the hands must be the same (bet is double basically because same bet in both hands)
+4. Ask the player if they want a hint (0 or 1) , and if they do:
+	if player's value of cards is >=19, don't hit
+	if player's value is less than 4, hit
+	if player's value is 11, double down
+	if dealer's shows 6 or less, dont hit
+	if player has a pair of 2's or 3's, split them when dealer shows less than 8
+	if player's value is 9, double down when dealer shows 3, 4, 5, or 6
+	only consider double if you have 9, 10 , or 11
