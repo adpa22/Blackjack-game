@@ -8,7 +8,7 @@ public class Card
 	public static final int DIAMONDS = 3;
 
 	// Card faces (provided for your convenience - use is optional)
-	public static final int ACE      = 1; //take final out if you need to choose it to be 1 or 11
+	public static final int ACE      = 1;
 	public static final int TWO      = 2;
 	public static final int THREE    = 3;
 	public static final int FOUR     = 4;
@@ -23,20 +23,22 @@ public class Card
 	public static final int KING     = 13;
 
 
+	// define fields here
 	int suit;
 	int face;
-	
+	boolean faceUp;
 	// This constructor builds a card with the given suit and face, turned face down.
 	public Card(int cardSuit, int cardFace)
 	{
 		suit = cardSuit;
 		face = cardFace;
+		faceUp = false;
 	}
 
 	// This method retrieves the suit (spades, hearts, etc.) of this card.
 	public int getSuit()
 	{
-		return suit;
+		return suit; // replace this line with your code
 	}
 	
 	// This method retrieves the face (ace through king) of this card.
@@ -59,8 +61,21 @@ public class Card
 			return face;
 	}
 
-	public String toString()
+	// This method determines whether the front of the card should be visible.
+	public boolean isFaceUp()
 	{
-		return face + " of " + suit;
-	}	
+		return faceUp; // replace this line with your code
+	}
+
+	// This method records that the front of the card should be visible.
+	public void turnFaceUp()
+	{
+		faceUp = true;
+	}
+	
+	// This method records that only the back of the card should be visible.
+	public void turnFaceDown()
+	{
+		faceUp = false;
+	}
 }
